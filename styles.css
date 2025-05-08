@@ -84,18 +84,19 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 1100;
+    z-index: 2001;
+    position: relative;
 }
 .nav-toggle .bar {
     width: 28px;
     height: 3px;
     background: #fff;
-    margin: 4px 0;
+    margin: 5px 0;
     border-radius: 2px;
     transition: 0.3s;
 }
@@ -496,25 +497,30 @@ footer::before {
     .nav-toggle {
         display: flex;
     }
+    .nav-content {
+        position: relative;
+    }
     .nav-links {
         display: none;
         position: absolute;
         top: 60px;
-        right: 2rem;
+        right: 0;
+        left: 0;
         background: var(--primary-color);
         flex-direction: column;
-        width: 200px;
-        border-radius: 8px;
+        width: 100vw;
+        border-radius: 0 0 8px 8px;
         box-shadow: var(--shadow-2);
         padding: 1rem 0;
-        z-index: 1001;
+        z-index: 2000;
+        text-align: center;
     }
     .nav-links.open {
         display: flex;
     }
     .nav-links li {
         margin: 0.5rem 0;
-        text-align: right;
+        text-align: center;
         padding: 0 1.5rem;
     }
     
