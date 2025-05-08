@@ -53,4 +53,20 @@ skillItems.forEach(item => {
     item.style.transform = 'translateY(20px)';
     item.style.transition = 'all 0.5s ease-out';
     observer.observe(item);
-}); 
+});
+
+// Hamburger menu functionality
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileNav = document.getElementById('mobile-nav');
+
+if (mobileMenuBtn && mobileNav) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('active');
+    });
+    // Close menu when a link is clicked
+    mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+        });
+    });
+} 

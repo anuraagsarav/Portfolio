@@ -469,6 +469,54 @@ footer::before {
     font-size: 1.2rem;
 }
 
+/* Hamburger menu styles */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    z-index: 1100;
+}
+
+.mobile-nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 2rem;
+    background: var(--primary-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow-2);
+    list-style: none;
+    padding: 1rem 0;
+    min-width: 180px;
+    z-index: 1100;
+}
+
+.mobile-nav li {
+    margin: 0;
+}
+
+.mobile-nav a {
+    display: block;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.mobile-nav a:hover {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+.mobile-nav.active {
+    display: block;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .nav-links {
@@ -509,5 +557,9 @@ footer::before {
     .experience-item::before {
         width: 4px;
         border-radius: 6px 0 0 6px;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
     }
 } 
