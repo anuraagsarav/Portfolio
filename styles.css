@@ -78,6 +78,28 @@ body {
     background: rgba(21,101,192,0.10);
 }
 
+/* Hamburger menu styles */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+.nav-toggle .bar {
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
 /* Hero section */
 .hero {
     background: var(--bg-color);
@@ -469,58 +491,31 @@ footer::before {
     font-size: 1.2rem;
 }
 
-/* Hamburger menu styles */
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 2rem;
-    cursor: pointer;
-    margin-left: 1rem;
-    z-index: 1100;
-}
-
-.mobile-nav {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 2rem;
-    background: var(--primary-color);
-    border-radius: 8px;
-    box-shadow: var(--shadow-2);
-    list-style: none;
-    padding: 1rem 0;
-    min-width: 180px;
-    z-index: 1100;
-}
-
-.mobile-nav li {
-    margin: 0;
-}
-
-.mobile-nav a {
-    display: block;
-    color: #fff;
-    padding: 0.75rem 2rem;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background 0.2s;
-}
-
-.mobile-nav a:hover {
-    background: var(--accent-color);
-    color: #fff;
-}
-
-.mobile-nav.active {
-    display: block;
-}
-
 /* Responsive design */
 @media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
     .nav-links {
         display: none;
+        position: absolute;
+        top: 60px;
+        right: 2rem;
+        background: var(--primary-color);
+        flex-direction: column;
+        width: 200px;
+        border-radius: 8px;
+        box-shadow: var(--shadow-2);
+        padding: 1rem 0;
+        z-index: 1001;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+    .nav-links li {
+        margin: 0.5rem 0;
+        text-align: right;
+        padding: 0 1.5rem;
     }
     
     .hero {
@@ -557,9 +552,5 @@ footer::before {
     .experience-item::before {
         width: 4px;
         border-radius: 6px 0 0 6px;
-    }
-    
-    .mobile-menu-btn {
-        display: block;
     }
 } 

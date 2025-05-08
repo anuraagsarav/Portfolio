@@ -55,18 +55,11 @@ skillItems.forEach(item => {
     observer.observe(item);
 });
 
-// Hamburger menu functionality
-const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-const mobileNav = document.getElementById('mobile-nav');
-
-if (mobileMenuBtn && mobileNav) {
-    mobileMenuBtn.addEventListener('click', () => {
-        mobileNav.classList.toggle('active');
-    });
-    // Close menu when a link is clicked
-    mobileNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-        });
+// Hamburger menu toggle for mobile
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
     });
 } 
